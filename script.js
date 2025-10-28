@@ -8,7 +8,7 @@ if (userForm) {
     const messageContainer = document.getElementById("successMessageContainer");
 
     const validUser = "miya";
-    const validPass = "1234";
+    const validPass = "2025";
 
     if (username === validUser && password === validPass) {
       messageContainer.textContent = "Login successful! Redirecting...";
