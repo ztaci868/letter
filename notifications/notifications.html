@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notifications</title>
+  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .notification-icon {
+      font-size: 80px; /* size of the icon */
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    /* Hover effect: push up slightly */
+    .notification-icon:hover {
+      transform: translateY(-6px);
+    }
+
+    .notification-text {
+      margin-top: 20px;
+      font-size: 1.5rem;
+      color: #333;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mail icon -->
+  <div class="notification-icon" onclick="location.href='../inbox/inbox.html'">
+    ✉️
+  </div>
+
+  <!-- Text below -->
+  <div class="notification-text">
+    You have x unread messages!
+  </div>
+
+</body>
+</html>

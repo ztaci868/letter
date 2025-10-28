@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Info</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Inter', sans-serif;
+      background-color: #f5f5f5;
+    }
+
+    .sideBar {
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 1.4rem;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+      width: 250px;
+    }
+
+    label {
+      align-self: flex-start;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #333;
+      margin-top: 10px;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"] {
+      width: 100%;
+      padding: 8px;
+      margin-top: 3px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-size: 0.95rem;
+    }
+
+    input[type="submit"] {
+      margin-top: 15px;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 6px;
+      background-color: #5C6FA5;
+      color: white;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background-color 0.2s ease, transform 0.1s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #4E61A1;
+    }
+
+    #successMessageContainer {
+    margin-top: 15px;
+    text-align: center;
+    color: #d32f2f;
+    font-size: 0.95rem;
+    width: 250px; /* same as form to prevent shifting */
+    height: 1.2em; /* ✅ fixed height keeps layout stable */
+  }
+  </style>
+</head>
+
+<body>
+  <div class="sideBar">
+    <h2>verify your identity:</h2>
+    <form id="verifyForm">
+      <label for="firstName">username:</label>
+      <input type="text" id="firstName" name="firstName" required>
+
+      <label for="lastName">password:</label>
+      <input type="text" id="lastName" name="lastName" required>
+
+      <label for="birthday">birthday:</label>
+      <input type="date" id="birthday" name="birthday" required>
+
+      <label for="age">age:</label>
+      <input type="number" id="age" name="age" required>
+
+      <input type="submit" value="Enter">
+    </form>
+
+    <div id="successMessageContainer"></div>
+  </div>
+
+  <script src="../script.js"></script>
+</body>
+</html>
