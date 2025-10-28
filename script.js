@@ -7,7 +7,7 @@ if (userForm) {
     const password = document.getElementById("password").value;
     const messageContainer = document.getElementById("successMessageContainer");
 
-    const validUser = "Miya";
+    const validUser = "miya";
     const validPass = "1234";
 
     if (username === validUser && password === validPass) {
@@ -15,7 +15,7 @@ if (userForm) {
       messageContainer.style.color = "green";
 
       setTimeout(() => {
-        window.location.href = "/info/info.html";
+        window.location.href = "./info/info.html";
       }, 1000);
     } else {
       messageContainer.textContent = "Invalid username or password.";
