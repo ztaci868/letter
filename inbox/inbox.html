@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Inbox</title>
-  <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap" rel="stylesheet">
+  <link href="../global.css" rel="stylesheet"> 
   <link rel="stylesheet" href="inbox.css">
 </head>
 <body>
@@ -18,18 +19,148 @@
       <div class="timestamp">Timestamp if you want it</div>
     </div>
 
-    <div class="message" onclick="location.href='../video/videoMessage.html'">
+    <div class="message" onclick="location.href='../video/video.html'">
       <div class="sender">Lua</div>
       <div class="preview">This can also be like a preview of the transcript or smth</div>
       <div class="timestamp">2 days ago</div>
     </div>
 
-    <div class="message" onclick="location.href='../video/videoMessage.html'">
+    <div class="message" onclick="location.href='../video/video.html'">
       <div class="sender">Family</div>
       <div class="preview">this could also be like a subject message idk</div>
       <div class="timestamp">36 minutes ago</div>
     </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">1</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">2</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+        <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">Lua</div>
+      <div class="preview">This can also be like a preview of the transcript or smth</div>
+      <div class="timestamp">2 days ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">Family</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">1</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">2</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+        <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">Lua</div>
+      <div class="preview">This can also be like a preview of the transcript or smth</div>
+      <div class="timestamp">2 days ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">Family</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">1</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">2</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+        <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">Lua</div>
+      <div class="preview">This can also be like a preview of the transcript or smth</div>
+      <div class="timestamp">2 days ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">Family</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">1</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+    <div class="message" onclick="location.href='../video/video.html'">
+      <div class="sender">2</div>
+      <div class="preview">this could also be like a subject message idk</div>
+      <div class="timestamp">36 minutes ago</div>
+    </div>
+
+    <div class="pagination">
+      <button onclick="prevPage()">Prev</button>
+      <span id="page-info"></span>
+      <button onclick="nextPage()">Next</button>
+    </div>
+
   </div>
+
+<script>
+  const messagesPerPage = 7;
+  const messages = document.querySelectorAll(".message");
+  let currentPage = 1;
+
+  function showPage(page) {
+    const start = (page - 1) * messagesPerPage;
+    const end = start + messagesPerPage;
+
+    messages.forEach((msg, index) => {
+      if (index >= start && index < end) {
+        msg.style.display = "block";
+      } else {
+        msg.style.display = "none";
+      }
+    });
+
+    document.getElementById("page-info").innerText =
+      "Page " + page + " of " + Math.ceil(messages.length / messagesPerPage);
+  }
+
+  function nextPage() {
+    if (currentPage < Math.ceil(messages.length / messagesPerPage)) {
+      currentPage++;
+      showPage(currentPage);
+    }
+  }
+
+  function prevPage() {
+    if (currentPage > 1) {
+      currentPage--;
+      showPage(currentPage);
+    }
+  }
+
+  // initialize
+  showPage(currentPage);
+</script>
 
 </body>
 </html>
