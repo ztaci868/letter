@@ -7,8 +7,8 @@ if (userForm) {
     const password = document.getElementById("password").value;
     const messageContainer = document.getElementById("successMessageContainer");
 
-    const validUser = "miya";
-    const validPass = "2025";
+    const validUser = "mrp2267";
+    const validPass = "officially20!";
 
     if (username === validUser && password === validPass) {
       messageContainer.textContent = "Login successful! Redirecting...";
@@ -35,10 +35,10 @@ if (verifyForm) {
     const age = document.getElementById("age").value.trim();
     const messageContainer = document.getElementById("successMessageContainer");
 
-    const validFirst = "Zac";
-    const validLast = "Tacio";
-    const validBirthday = "2008-01-15";
-    const validAge = "17";
+    const validFirst = "Miya";
+    const validLast = "Phillion";
+    const validBirthday = "2006-04-20";
+    const validAge = "20";
 
     if (
       firstName === validFirst &&
