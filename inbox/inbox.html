@@ -118,7 +118,9 @@
 <script>
   const messagesPerPage = 7;
   const messages = document.querySelectorAll(".message");
-  let currentPage = 1;
+  let currentPage = localStorage.getItem("inboxPage") 
+  ? parseInt(localStorage.getItem("inboxPage")) 
+  : 1;
 
   function showPage(page) {
     const start = (page - 1) * messagesPerPage;
@@ -131,6 +133,8 @@
         msg.style.display = "none";
       }
     });
+
+    localStorage.setItem("inboxPage", page);
   }
 
   function nextPage() {
