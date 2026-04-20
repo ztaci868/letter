@@ -29,8 +29,8 @@ body {
   height: 100%;
 
   background:
-    linear-gradient(90deg, rgba(120,90,60,0.12) 50%, transparent 50%),
-    linear-gradient(rgba(120,90,60,0.12) 50%, transparent 50%);
+    linear-gradient(90deg, var(--bg-pattern) 50%, transparent 50%),
+    linear-gradient(var(--bg-pattern) 50%, transparent 50%);
   background-size: 40px 40px;
 
   z-index: 0;
@@ -57,8 +57,8 @@ body {
 
 /* 🟫 HEADER BAR */
 .email-header {
-  background-color: #5b2d00;
-  color: white;
+  background-color: var(--header-color);
+  color: rgb(0, 0, 0);
 
   padding: 12px 16px;
   font-size: 1.2rem;
@@ -113,39 +113,39 @@ body {
 /* labels */
 .label {
   width: 50px; /* 👈 keeps alignment clean */
-  color: #6F191C;
+  color: var(--main-color);
   opacity: 0.7;
 }
 
 /* values */
 .value {
-  color: #6F191C;
+  color: var(--main-color);
 }
 
 .email-meta p {
   margin: 2px 0;
-  color: #6F191C;
+  color: var(--main-color);
 }
 
 /* 📸 ATTACHMENTS */
 .attachments {
   display: flex;
-  gap: 10px;
+  flex-wrap: wrap;   /* ✅ allows wrapping to next line */
+  gap: 12px;
   padding: 12px 16px;
-  overflow-x: auto;
 }
 
-/* image styling */
 .attachments img {
-  width: 600px;
-  height: 400px;
-  object-fit:contain;
+  width: calc(33.33% - 8px);; /* 2 per row */
+  height: auto;           /* keeps natural ratio */
 
   border-radius: 6px;
-  cursor: pointer;
+  object-fit: cover;
 
+  cursor: pointer;
   transition: transform 0.15s ease, opacity 0.15s ease;
 }
+
 
 .attachments img:hover {
   transform: translateY(-3px);
@@ -176,7 +176,7 @@ body {
 }
 
 .video-sender {
-  color: #6F191C;
+  color: var(--main-color);
   font-size: 1rem;
 }
 
@@ -205,6 +205,43 @@ body {
   line-height: 1.5;
   font-size: 0.95rem;
 }
+
+/* 🎨 THEME VARIATIONS */
+
+/* 🎨 THEMES */
+
+/* THEME 1 */
+.theme-1 {
+  --header-color: #452500;
+  --main-color: #6b3a00;
+  --bg-pattern: rgba(120, 90, 60, 0.12);
+}
+
+/* THEME 2 */
+.theme-2 {
+  --header-color: #FFCF6E;
+  --main-color: #b88a00;
+  --bg-pattern: rgba(255, 207, 110, 0.18);
+}
+
+.theme-2 .email-header {
+  color: #452500; /* dark text for contrast */
+}
+
+/* THEME 3 */
+.theme-3 {
+  --header-color: #6F191C;
+  --main-color: #6F191C;
+  --bg-pattern: rgba(111, 25, 28, 0.12);
+}
+
+/* THEME 4 */
+.theme-4 {
+  --header-color: #536D8C;
+  --main-color: #3e526a;
+  --bg-pattern: rgba(83, 109, 140, 0.15);
+}
+
 
 /* 📱 MOBILE */
 @media (max-width: 600px) {
