@@ -3,8 +3,9 @@ const userForm = document.getElementById("userForm");
 if (userForm) {
   userForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    const username = document.getElementById("user").value;
+    const username = document.getElementById("user").value.toLowerCase();
     const password = document.getElementById("password").value;
+
     const messageContainer = document.getElementById("successMessageContainer");
 
     const validUser = "mrp2267";
@@ -29,14 +30,14 @@ const verifyForm = document.getElementById("verifyForm");
 if (verifyForm) {
   verifyForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    const firstName = document.getElementById("firstName").value.trim();
-    const lastName = document.getElementById("lastName").value.trim();
+    const firstName = document.getElementById("firstName").value.trim().toLowerCase();
+    const lastName = document.getElementById("lastName").value.trim().toLowerCase();
     const birthday = document.getElementById("birthday").value;
     const age = document.getElementById("age").value.trim();
     const messageContainer = document.getElementById("successMessageContainer");
 
-    const validFirst = "Miya";
-    const validLast = "Phillion";
+    const validFirst = "miya";
+    const validLast = "phillion";
     const validBirthday = "2006-04-20";
     const validAge = "20";
 
